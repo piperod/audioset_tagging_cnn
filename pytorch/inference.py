@@ -123,7 +123,12 @@ def audio_tagging_folder(args):
     for audio_path in aud_paths:
         print('Infering path:',audio_path)
         # Load audio
-        (waveform, _) = librosa.core.load(audio_path, sr=sample_rate, mono=True)
+        try:
+            (waveform, _) = librosa.core.load(audio_path, sr=sample_rate, mono=True)
+        except: 
+            print('Problem with path:',audio_path)
+            results[audio_path]='Failed'
+            continue
 
         waveform = waveform[None, :]    # (1, audio_length)
         waveform = move_data_to_device(waveform, device)
