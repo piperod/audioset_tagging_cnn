@@ -100,7 +100,7 @@ def audio_tagging_folder(args):
     classes_num = config.classes_num
     labels = config.labels
     aud_paths = glob.glob(os.path.join(folder,'*wav'))+glob.glob(os.path.join(folder,'*mp3'))
-    
+    print(aud_paths)
     # Model
     Model = eval(model_type)
     model = Model(sample_rate=sample_rate, window_size=window_size, 
