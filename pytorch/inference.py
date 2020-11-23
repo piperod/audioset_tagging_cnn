@@ -257,7 +257,7 @@ if __name__ == '__main__':
     parser_at.add_argument('--fmax', type=int, default=14000) 
     parser_at.add_argument('--model_type', type=str, required=True)
     parser_at.add_argument('--checkpoint_path', type=str, required=True)
-    parser_at.add_argument('--audio_path', type=str, required=True)
+    parser_at.add_argument('--audio_path', type=str, required=False)
     parser_at.add_argument('--cuda', action='store_true', default=False)
     parser_at.add_argument('--folder',type=str,default=None)
 
